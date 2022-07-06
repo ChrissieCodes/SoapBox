@@ -4,7 +4,7 @@
  Starting by implementing the classes in the domain model from draw.io model in the Domain Model folder but removing the User and the Locations from the Model. The three Modules to start with will be the recommendation itself, the storage of the recommendation and the ranking of the recommendation. The process will be as follows, A recommendation is given by user/input, the recommendation is then stored and delivered at which point it is given a ranking 
 
 
-# CookiesAndBeer
+# Cookies and Beer 
 The design, creation, and testing of an app that introduces the idea of a decentralized >>buzz word<< recommendation engine. 
 
 This test needs the following python packages installed
@@ -17,9 +17,6 @@ sqlalchemy
         desc
        .session
             Session
-from pathlib 
-     Path
-time
 requests
 flask 
      Flask
@@ -27,15 +24,6 @@ flask
 dataclasses
      dataclass
      asdict
- datetime 
-     datetime
-     date
-     timezone
-typing 
-     List 
-     Dict 
-     Callable 
-     Type
 __future__
      annotations
 setuptools

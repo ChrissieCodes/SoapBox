@@ -32,7 +32,8 @@ def setRank(recommendations: List[Recommendation], matchid):
     #                 if len(recs_for_item) ==len(set(recs_for_item)):
     #                     continue
     #                 else:
-    #                     return len(recs_for_item) ==len(set(recs_for_item))                
+    #                     return len(recs_for_item) ==len(set(recs_for_item))   
+    # TODO: think about using coordinates as location             
 
 @dataclass
 class Item:

@@ -8,7 +8,7 @@ def get_sqlite_memory_uri():
 
 def get_sqlite_file_url():
     """
-    gets the fully-qualified path to the bookmarks.db file
+    gets the fully-qualified path to the recommendations.db file
     """
     return f"sqlite:///{os.path.join(basedir, 'recommendations.db')}"
 

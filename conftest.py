@@ -33,7 +33,7 @@ def session(sqlite_session_factory):
 
 def wait_for_webapp_to_come_up():
     deadline = time.time() + 10
-    url = config.get_sqlite_memory_uri()
+    url = config.get_api_url()
     while time.time() < deadline:
         try:
             return requests.get(url)
@@ -44,7 +44,7 @@ def wait_for_webapp_to_come_up():
 
 @pytest.fixture
 def restart_api():
-    path=(Path(__file__).parent / "flaskapi.py")
+    path=(Path(__file__).parent / "submit_recommendations")
     print(path)
     path.touch()
     time.sleep(0.5)
