@@ -11,13 +11,19 @@ from flask import Flask
 
 from orm import metadata, start_mappers
 
-
+@pytest.fixture(scope="session")
+def tables(engine):
+    metadata.create_all(engine)
+    try:
+        yield
+    finally:
+        metadata.drop_all(engine)
+        
 @pytest.fixture
 def in_memory_db():
     engine = create_engine("sqlite://")
     metadata.create_all(engine)
     return engine
-
 
 @pytest.fixture
 def sqlite_session_factory(in_memory_db):

@@ -1,5 +1,6 @@
  
 #make sure you are in the correct directory before you start the app, you silly silly girl. 
+#TODO: 1. return 200 from endpoint (successfully ping the api) 2.create table to store recommendations 3. retrieve data from request 4. save request to database
 from datetime import datetime
 from venv import create
 from flask import Flask, request
@@ -16,6 +17,7 @@ orm.start_mappers()
 
 @app.route("/submit_recommendation", methods=["POST"])
 def add_recommendation():
+    print(request)
     date = request.json["date"]
     if date is not None:
         date = datetime.fromisoformat(date).date()
