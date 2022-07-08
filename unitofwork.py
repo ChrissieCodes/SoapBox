@@ -42,7 +42,7 @@ class AbstractUnitOfWork(ABC):
 
 DEFAULT_SESSION_FACTORY = sessionmaker(
     bind=create_engine(
-        config.get_sqlite_memory_uri(),
+        config.get_sqlite_file_url(),
         isolation_level="SERIALIZABLE",
     )
 )
