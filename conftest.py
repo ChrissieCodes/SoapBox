@@ -44,7 +44,7 @@ def wait_for_webapp_to_come_up():
 
 @pytest.fixture
 def restart_api():
-    path=(Path(__file__).parent / "submit_recommendations")
+    path=(Path(__file__).parent / "submit_recommendations.db")
     print(path)
     path.touch()
     time.sleep(0.5)
