@@ -14,7 +14,7 @@ from orm import metadata, start_mappers
 
 @pytest.fixture
 def in_memory_db():
-    engine = create_engine("sqlite:///:memory:")
+    engine = create_engine("sqlite://")
     metadata.create_all(engine)
     return engine
 
@@ -44,8 +44,7 @@ def wait_for_webapp_to_come_up():
 
 @pytest.fixture
 def restart_api():
-    path=(Path(__file__).parent / "submit_recommendations.db")
-    print(path)
+    path=(Path(__file__).parent / "recommendations.db")
     path.touch()
     time.sleep(0.5)
     wait_for_webapp_to_come_up()

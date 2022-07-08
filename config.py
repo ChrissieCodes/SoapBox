@@ -3,7 +3,7 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 def get_sqlite_memory_uri():
-    return f"sqlite:///:memory:"
+    return f"sqlite://"
 
 
 def get_sqlite_file_url():
@@ -15,6 +15,7 @@ def get_sqlite_file_url():
 
 def get_api_url():
     host = os.environ.get("API_HOST", "localhost")
+    print(host)
     port = 5000 if host == "localhost" else 80
     return f"http://{host}:{port}"
 

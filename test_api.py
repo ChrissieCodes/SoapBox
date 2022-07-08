@@ -5,13 +5,16 @@ import pytest
 
 def post_to_add_recommendation(itemID, uniqueUserMatchID, findItem, date):
     url = config.get_api_url()
+    print(url)
+    # url localhost:5000
     r = requests.post(
         f"{url}/submit_recommendation", json={"itemID": itemID, "matchID": uniqueUserMatchID, "findItem": findItem, "date": date}
     )
+    # localhost:5000/submit_recommendations
     assert r.status_code == 201
 
-@pytest.mark.usefixtures("in_memory_db")
-@pytest.mark.usefixtures("restart_api")
+@pytest.mark.usefixtures("in_memory_db") #creates sqlite engine
+@pytest.mark.usefixtures("restart_api") #restarts the api
 def test_happy_path_returns_201_and_allocated_batch():
     post_to_add_recommendation("pizza","bettygeorge", "cheshirecat.com", "2011-01-02")
     post_to_add_recommendation("pizza","bettyjohn",  "misspiggys.com", "2011-01-01")

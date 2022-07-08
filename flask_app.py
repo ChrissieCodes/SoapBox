@@ -1,12 +1,13 @@
  
 #make sure you are in the correct directory before you start the app, you silly silly girl. 
 from datetime import datetime
+from venv import create
 from flask import Flask, request
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 import recommendations
-import orm
+import orm, config
 import services, unitofwork
 
 app = Flask(__name__)
