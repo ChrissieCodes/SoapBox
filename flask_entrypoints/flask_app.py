@@ -9,9 +9,9 @@ from flask import Flask, request
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-import recommendations
-import orm, config
-import services, unitofwork
+import soapbox.domain.recommendations
+from soapbox.adapters import orm
+from soapbox.service_layer import services, unitofwork
 
 app = Flask(__name__)
 # bus = bootstrap.bootstrap()

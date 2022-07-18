@@ -1,7 +1,7 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
-import events
+from soapbox.domain import events
 # Base = declarative_base()
 
 class SameRecommendations(Exception):
